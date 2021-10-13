@@ -13,14 +13,14 @@ public class Task5Main {
     public static void main(String[] args) {
 
         System.out.println("Введите вместимость сейфа(целое число)");
-        String safeVolumeString = scanner.nextLine();
+        String safeVolumeString = scanner.nextLine().replaceAll(" ", "");
         int safeVolume = Integer.parseInt(safeVolumeString);
 
         System.out.println("Вводите целые числа (объем),(ценность) (enter), если хотите завершить ввод предметов напишите N");
         List<SafeItem> safeItems = new ArrayList<>();
         while (true) {
-            String s = scanner.nextLine();
-            if (s.equals("N")) {
+            String s = scanner.nextLine().replaceAll(" ", "");
+            if (s.toUpperCase().equals("N")) {
                 break;
             }
             String[] split = s.split(",");
